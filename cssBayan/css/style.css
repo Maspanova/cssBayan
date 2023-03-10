@@ -1,0 +1,188 @@
+%* {margin:0;padding:0;}
+
+html {
+    box-sizing: border-box; /*изменен алгоритм расчета размера блоко*/
+    scroll-behavior: smooth; /*плавная прокрутка*/
+}
+
+*,
+*::before,
+*::after 
+{
+    box-sizing: inherit; /*наследуется алгоритм расчета блока*/
+}
+
+
+body {
+    background: #EDF2EC; /*цвет фона*/
+    width: 90%;
+    height: 90%;
+    font-family: "Inter", sans-serif;
+     font-style: normal;
+    font-size: 20px;
+    Line-height: 35px;
+    font-weight: 400;
+    color:  #636060;
+    
+
+}
+.wrapper {
+
+    margin: 0 auto; /*выравнивание по центру*/
+   
+    background: burlywood; /*цвет фона*/
+}
+
+
+.prices_acor {
+    width: 322px;
+    min-height: 282px;
+    border: 1px solid #E3E1D5;
+    border-radius: 20px;
+   display: inline-flex;
+flex-direction: column;
+ align-items: center;
+justify-content: center;
+
+}
+.acor-body{
+    width: 250px;
+    height: 154px;
+    background-color: #D6E7D2;
+    border-radius: 20px;
+
+
+
+
+ 
+ 
+}
+.prices_acor .acor-body {
+     height: 0;
+     overflow: hidden; /*содержимое, выходящее за пределы блока элемента, будет скрыто.*/
+    transition: color 0.5s, padding 0.5s;
+}
+
+
+.prices_acor label {
+    cursor: pointer;
+    background-color: #EDF2EC;
+    display: block;
+    width: 250px;
+    height: 50px;
+    border-radius: 20px;
+    margin-bottom: 32px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+   padding: 16px 110px 16px 40px;
+     color: #000000;
+    position: relative;
+    z-index: 100;
+    transition: color .35s;
+    
+    
+}
+.prices_acor label:hover {
+    background: #D6E7D2;
+}
+
+
+
+.prices_acor input{
+    display: none;
+}
+.prices_acor label:before {
+    content: url("../images/accordion_btn_pr.svg");
+    float: right;
+    position: absolute;
+  left: 80%;
+  
+
+}
+
+.prices_acor input:checked + label:before {
+    transition: transform .35s;
+    transform: rotate(180deg);
+}
+.prices_acor input:checked + label + .acor-body {
+    height: auto;
+    margin-top: -5px;
+    color: #000;
+    padding: 20px 30px 10px;
+
+}
+
+
+h3{
+font-family: Inter;
+font-size: 20px;
+font-weight: 700;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+margin-bottom: 12px;
+}
+.acor_hr {
+    color: #AEA1A1;
+    width: 164px;
+    height: 0.5px;
+    align-items: center;
+}
+.acor_text{
+    font-family: Inter;
+font-size: 10px;
+font-weight: 300;
+line-height: 10px;
+letter-spacing: 0em;
+text-align: left;
+margin: 6px 0px;
+
+
+}
+.acor_price {
+    font-family: Inter;
+font-size: 12px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+
+
+}
+
+.acor_button {
+    width: 86px;
+    height: 25px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: #FFFFFF;
+}
+.acor_button:hover {
+    background: #E06733;
+    color: #FFFFFF;
+}
+
+
+    @media screen and (max-width:768px){
+        body {
+            width: 768;
+        }
+        .wrapper {
+          width: 668px;
+          margin: 0 auto;   
+        }
+    }
+  
+    
+    
+    
+    @media screen and (max-width: 380px){
+        .wrapper {
+          max-width: 330px;   
+          margin: 0 auto;
+        }
+    }
+
+/*конец меню для мобилки */
