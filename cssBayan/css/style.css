@@ -20,14 +20,16 @@ body {
     padding: 3%;
     max-width:100%;
     max-width: 100%;
-    box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
-    border-radius: 5%;
+    background: whitesmoke;
+}
+h1{
+    font-size: 54px;
 }
 
 .acor-body {
     height: 0;
     color: rgba(0, 0, 0, 0);
-    background-color: #BFE2FF;
+   
     line-height: 18px;
     padding: 0 30px;
     box-sizing: border-box;
@@ -35,50 +37,87 @@ body {
     overflow: hidden;
     font-family: Verdana, sans-serif; 
     font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
+   
+    text-align: center;
+}
+.acor-body p{
+    position: static;
+    
 }
 
 .acor-container label {
     cursor: pointer;
-    background-color: #337AB7;
     display: block;
     padding: 15px 20px;
     width: 100%;
-    color: #BFE2FF;
+    color: royalblue;
     font-weight: 300;
     box-sizing: border-box;
     z-index: 100;
     font-family: Verdana, sans-serif;   
-    font-size: 18px;
+    font-size: 34px;
     margin: 0 0 5px;
-    transition: color .35s;
+    transition: color .55s;
 }
+.acor-container {
+    cursor: pointer;}
+
 .acor-container label:hover {
-    color: #FFF;
+    color: black;
+    
+    
 }
+.acor-container label:hover + label {
+    color: #FFF;
+    /*background-color: #285f8f;*/
+    box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
+}
+    
+/*скрыть значки чек-бокса*/
 .acor-container input{
     display: none;
 }
-.acor-container label:before {
+
+.acor-container input:checked + label:before {
     content: '\276F';
     float: right;
 }
+/*появление указателя после наведения мыши*/
+.acor-container:hover label:before {
+    content: '\276F';
+    float: right;
+  }
+acor-container:hover label{
+    color:#337AB7;
+}
+
 .acor-container input:checked + label {
-    background-color: #285f8f;
-    color: #FFF;
-    box-shadow: 0 8px 26px rgba(0,0,0,0.4), 0 28px 30px rgba(0,0,0,0.3);
+    color: black;
+
 }
 .acor-container input:checked + label:before {
     transition: transform .35s;
     transform: rotate(90deg);
 }
+
+/* раскрывается текст при нажатии на чек-бокс */
 .acor-container input:checked + label + .acor-body {
     height: auto;
     margin-top: -5px;
     color: #000;
     padding: 20px 30px 10px;
+   
 }
 
+
+/*раскрывается при наведениимыши*/
+.acor-container label:hover  + .acor-body {
+    height: auto;
+    margin-top: -5px;
+    color: #000;
+    padding: 20px 30px 10px;
+   
+}
 
     @media screen and (max-width:768px){
         body {
